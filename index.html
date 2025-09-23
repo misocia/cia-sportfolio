@@ -9,10 +9,17 @@
       --bg:#0e0e10;--card:#141418;--soft:#1d1d22;--text:#ffffff;--muted:#cfcfe1;--purple:#c7b8ff;--yellow:#fde68a;--pink:#fbcfe8;--white:#ffffff;--ring: 0 0 0 6px rgba(255,255,255,0.04), 0 12px 40px rgba(0,0,0,0.45);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif}
+    html,body{margin:0;color:var(--text);font-family:'Poppins',sans-serif;
+      /* Cheerful pastel gradient background with subtle shapes */
+      background:
+        radial-gradient(1200px 600px at -10% -20%, rgba(251,207,232,0.6), transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, rgba(199,184,255,0.5), transparent 60%),
+        radial-gradient(900px 500px at 50% 120%, rgba(253,230,138,0.45), transparent 60%),
+        linear-gradient(160deg, #1a1a22 0%, #0e0e10 25%, #0e0e10 100%);
+      background-attachment: fixed;}
     a{color:var(--yellow);text-decoration:none}
     .container{width:min(1150px,92%);margin-inline:auto}
-    nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(20,20,24,0.85), rgba(20,20,24,0.55) 70%, rgba(20,20,24,0));backdrop-filter: blur(8px);}
+    nav{position:sticky;top:0;z-index:40;background:rgba(16,16,20,0.6);backdrop-filter: blur(8px);border-bottom:1px solid #24242a;}
     .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
     .logo{width:36px;height:36px;border-radius:10px;object-fit:cover;box-shadow:var(--ring);border:1px solid #24242a}
@@ -41,6 +48,18 @@
     .avatar>img{width:100%;height:100%;border-radius:20px;object-fit:cover}
     .facts{display:grid;gap:10px}
     .fact{background:linear-gradient(180deg,#15151a,#101015);border:1px solid #24242a;border-radius:14px;padding:10px;color:var(--muted)}
+      /* --- EMOJI DECOR --- */
+    .emoji-cloud{position:absolute;inset:0;pointer-events:none}
+    .emoji{position:absolute;font-size:clamp(18px,3vw,28px);opacity:.8;filter:drop-shadow(0 6px 16px rgba(0,0,0,.35));}
+    @keyframes drift{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
+    .emoji.f1{left:6%; top:22%; animation:drift 7s ease-in-out infinite}
+    .emoji.f2{left:14%; top:64%; animation:drift 8s ease-in-out infinite .3s}
+    .emoji.f3{right:10%; top:18%; animation:drift 9s ease-in-out infinite .6s}
+    .emoji.f4{right:18%; bottom:8%; animation:drift 7.5s ease-in-out infinite .9s}
+    .emoji.f5{left:48%; top:8%; animation:drift 10s ease-in-out infinite .2s}
+    .emoji.f6{left:52%; bottom:10%; animation:drift 8.5s ease-in-out infinite .4s}
+    .emoji.f7{right:40%; top:42%; animation:drift 9.5s ease-in-out infinite .7s}
+    .emoji.f8{left:28%; top:36%; animation:drift 11s ease-in-out infinite .5s}
   </style>
 </head>
 <body>
@@ -61,6 +80,11 @@
   <header class="hero">
     <div class="blob p1"></div>
     <div class="blob p2"></div>
+    <div class="emoji-cloud">
+      <span class="emoji f1">✂️</span>
+      <span class="emoji f2">💜</span>
+      <span class="emoji f3">⭐</span>
+      <span
     <div class="container hero-inner">
       <h1 class="headline">I cut videos, not people — <br/>fast, fun, and on beat.</h1>
       <p class="sub">Clipper & short‑form editor. I make moments <b>pop</b> with tight cuts, punchy captions, and scroll‑stopping rhythm.</p>
@@ -100,7 +124,7 @@
           <iframe class="embed" src="https://www.instagram.com/reel/C_0ZrJGS2ge/embed" allowfullscreen></iframe>
           <div class="card-body">
             <h3 class="title">Kehidupunk</h3>
-            <p class="meta">Graffiti & Humor cut</p>
+            <p class="meta">Humor & relatable cut</p>
           </div>
         </article>
       </div>

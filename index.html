@@ -10,7 +10,6 @@
     }
     *{box-sizing:border-box}
     html,body{margin:0;color:var(--text);font-family:'Poppins',sans-serif;
-      /* Cheerful pastel gradient background with subtle shapes */
       background:
         radial-gradient(1200px 600px at -10% -20%, rgba(251,207,232,0.6), transparent 60%),
         radial-gradient(1000px 500px at 110% 10%, rgba(199,184,255,0.5), transparent 60%),
@@ -26,14 +25,10 @@
     .nav-actions{display:flex;gap:.6rem}
     .btn{padding:.7rem 1rem;border-radius:14px;background:var(--soft);border:1px solid #24242a;color:var(--muted);font-weight:600;transition:all .25s}
     .btn-primary{background:linear-gradient(135deg,var(--purple),var(--yellow));color:#111;font-weight:800;border:none}
-    header.hero{position:relative;overflow:hidden}
-    .blob{position:absolute;filter:blur(60px);opacity:.6;pointer-events:none}
-    .blob.p1{width:420px;height:420px;left:-80px;top:-60px;background:radial-gradient(closest-side,var(--purple),transparent 70%)}
-    .blob.p2{width:380px;height:380px;right:-80px;bottom:-80px;background:radial-gradient(closest-side,var(--yellow),transparent 70%)}
-    .hero-inner{padding:70px 0 36px;display:grid;gap:28px}
-    .headline{font-size:clamp(36px,6vw,64px);font-weight:900;margin:0}
-    .sub{color:var(--muted);font-size:clamp(14px,2.6vw,18px)}
-    .card-hero{background:linear-gradient(180deg,#15151a,#111115);border:1px solid #23232a;border-radius:24px;padding:18px;box-shadow:var(--ring)}
+    header.hero{position:relative;overflow:hidden;text-align:center;padding:70px 0 36px;}
+    @keyframes fadeInUp {0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+    .headline{font-size:clamp(36px,6vw,64px);font-weight:900;margin:0;line-height:1.2;animation:fadeInUp 1s ease forwards;}
+    .sub{color:var(--muted);font-size:clamp(14px,2.6vw,18px);margin-top:8px;animation:fadeInUp 1.2s ease forwards;}
     section{padding:36px 0}
     .section-title{font-size:28px;margin:0 0 14px;font-weight:800}
     .section-desc{color:var(--muted);margin:0 0 18px}
@@ -46,20 +41,6 @@
     .about{display:grid;gap:22px;grid-template-columns:1.1fr .9fr}
     .avatar{width:160px;height:200px;border-radius:24px;background:linear-gradient(135deg,var(--purple),var(--yellow));padding:4px;box-shadow:var(--ring);overflow:hidden}
     .avatar>img{width:100%;height:100%;border-radius:20px;object-fit:cover}
-    .facts{display:grid;gap:10px}
-    .fact{background:linear-gradient(180deg,#15151a,#101015);border:1px solid #24242a;border-radius:14px;padding:10px;color:var(--muted)}
-      /* --- EMOJI DECOR --- */
-    .emoji-cloud{position:absolute;inset:0;pointer-events:none}
-    .emoji{position:absolute;font-size:clamp(18px,3vw,28px);opacity:.8;filter:drop-shadow(0 6px 16px rgba(0,0,0,.35));}
-    @keyframes drift{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(6deg)}100%{transform:translateY(0) rotate(0)}}
-    .emoji.f1{left:6%; top:22%; animation:drift 7s ease-in-out infinite}
-    .emoji.f2{left:14%; top:64%; animation:drift 8s ease-in-out infinite .3s}
-    .emoji.f3{right:10%; top:18%; animation:drift 9s ease-in-out infinite .6s}
-    .emoji.f4{right:18%; bottom:8%; animation:drift 7.5s ease-in-out infinite .9s}
-    .emoji.f5{left:48%; top:8%; animation:drift 10s ease-in-out infinite .2s}
-    .emoji.f6{left:52%; bottom:10%; animation:drift 8.5s ease-in-out infinite .4s}
-    .emoji.f7{right:40%; top:42%; animation:drift 9.5s ease-in-out infinite .7s}
-    .emoji.f8{left:28%; top:36%; animation:drift 11s ease-in-out infinite .5s}
   </style>
 </head>
 <body>
@@ -78,21 +59,8 @@
   </nav>
 
   <header class="hero">
-    <div class="blob p1"></div>
-    <div class="blob p2"></div>
-    <div class="emoji-cloud">
-      <span class="emoji f1">✂️</span>
-      <span class="emoji f2">💜</span>
-      <span class="emoji f3">⭐</span>
-      <span
-    <div class="container hero-inner">
-      <h1 class="headline">I cut videos, not people — <br/>fast, fun, and on beat.</h1>
-      <p class="sub">Clipper & short‑form editor. I make moments <b>pop</b> with tight cuts, punchy captions, and scroll‑stopping rhythm.</p>
-      <div class="card-hero" id="showreel">
-        <h2 class="section-title">✨ Showreel</h2>
-        <iframe class="embed" src="https://www.instagram.com/reel/C4pcPB3Jhdg/embed" allowfullscreen></iframe>
-      </div>
-    </div>
+    <h1 class="headline">I cut videos, not people — fast, fun, and on beat.</h1>
+    <p class="sub">Clipper & short‑form editor. I make moments <b>pop</b> with tight cuts, punchy captions, and scroll‑stopping rhythm.</p>
   </header>
 
   <main class="container">

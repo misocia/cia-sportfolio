@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cia — Fun Clipper Portfolio</title>
+  <style>
+    :root{
+      --bg:#0e0e10;
+      --card:#141418;
+      --soft:#1d1d22;
+      --text:#ffffff;
+      --muted:#cfcfe1;
+      --purple:#c7b8ff;
+      --yellow:#fde68a;
+      --pink:#fbcfe8;
+      --white:#ffffff;
+      --ring: 0 0 0 6px rgba(255,255,255,0.04), 0 12px 40px rgba(0,0,0,0.45);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:'Poppins',sans-serif}
+    a{color:var(--yellow);text-decoration:none}
+    .container{width:min(1150px,92%);margin-inline:auto}
+    nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(20,20,24,0.85), rgba(20,20,24,0.55) 70%, rgba(20,20,24,0));backdrop-filter: blur(8px);}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+    .logo{width:36px;height:36px;border-radius:10px;background:radial-gradient(100% 100% at 20% 25%, var(--yellow), var(--purple));box-shadow:var(--ring)}
+    .nav-actions{display:flex;gap:.6rem}
+    .btn{padding:.7rem 1rem;border-radius:14px;background:var(--soft);border:1px solid #24242a;color:var(--muted);font-weight:600;transition:all .25s}
+    .btn-primary{background:linear-gradient(135deg,var(--purple),var(--yellow));color:#111;font-weight:800;border:none}
+    header.hero{position:relative;overflow:hidden}
+    .blob{position:absolute;filter:blur(60px);opacity:.6;pointer-events:none}
+    .blob.p1{width:420px;height:420px;left:-80px;top:-60px;background:radial-gradient(closest-side,var(--purple),transparent 70%)}
+    .blob.p2{width:380px;height:380px;right:-80px;bottom:-80px;background:radial-gradient(closest-side,var(--yellow),transparent 70%)}
+    .hero-inner{padding:70px 0 36px;display:grid;gap:28px}
+    .headline{font-size:clamp(36px,6vw,64px);font-weight:900;margin:0}
+    .sub{color:var(--muted);font-size:clamp(14px,2.6vw,18px)}
+    .card-hero{background:linear-gradient(180deg,#15151a,#111115);border:1px solid #23232a;border-radius:24px;padding:18px;box-shadow:var(--ring)}
+    section{padding:36px 0}
+    .section-title{font-size:28px;margin:0 0 14px;font-weight:800}
+    .section-desc{color:var(--muted);margin:0 0 18px}
+    .embed{aspect-ratio:16/9;width:100%;border:none;border-radius:18px;overflow:hidden;background:#101014;box-shadow:var(--ring)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    .card{background:var(--card);border:1px solid #23232a;border-radius:18px;overflow:hidden;box-shadow:var(--ring)}
+    .card-body{padding:14px}
+    .title{font-weight:800;margin:0 0 6px}
+    .meta{color:var(--muted);font-size:.9rem;margin:0}
+    .about{display:grid;gap:22px;grid-template-columns:1.1fr .9fr}
+    .avatar{width:120px;height:120px;border-radius:24px;background:linear-gradient(135deg,var(--purple),var(--yellow));padding:4px;box-shadow:var(--ring)}
+    .avatar>div{width:100%;height:100%;border-radius:20px;background:#0f0f12;display:grid;place-items:center;color:var(--yellow);font-weight:900}
+    .facts{display:grid;gap:10px}
+    .fact{background:linear-gradient(180deg,#15151a,#101015);border:1px solid #24242a;border-radius:14px;padding:10px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>Cia ✂️ — Clipper</div>
+      </div>
+      <div class="nav-actions">
+        <a class="btn" href="#work">Works</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn btn-primary" href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="blob p1"></div>
+    <div class="blob p2"></div>
+    <div class="container hero-inner">
+      <h1 class="headline">I cut videos, not people — <br/>fast, fun, and on beat.</h1>
+      <p class="sub">Clipper & short‑form editor. I make moments <b>pop</b> with tight cuts, punchy captions, and scroll‑stopping rhythm.</p>
+      <div class="card-hero" id="showreel">
+        <h2 class="section-title">✨ Showreel</h2>
+        <iframe class="embed" src="https://www.instagram.com/reel/C4pcPB3Jhdg/embed" allowfullscreen></iframe>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="work">
+      <h2 class="section-title">🔥 Selected Works</h2>
+      <div class="grid">
+        <article class="card">
+          <iframe class="embed" src="https://www.instagram.com/reel/C4pcxxSJ8fu/embed" allowfullscreen></iframe>
+          <div class="card-body">
+            <h3 class="title">Tiba Tiba Jadi Barista</h3>
+            <p class="meta">Cut & fun timing</p>
+          </div>
+        </article>
+        <article class="card">
+          <iframe class="embed" src="https://www.instagram.com/reel/C4pc48OpKMw/embed" allowfullscreen></iframe>
+          <div class="card-body">
+            <h3 class="title">Masih Jadi Barista</h3>
+            <p class="meta">Meme-style cuts</p>
+          </div>
+        </article>
+        <article class="card">
+          <iframe class="embed" src="https://www.instagram.com/reel/C4zrsPgJIqf/embed" allowfullscreen></iframe>
+          <div class="card-body">
+            <h3 class="title">Free Time Banget</h3>
+            <p class="meta">Relaxed vibe edit</p>
+          </div>
+        </article>
+        <article class="card">
+          <iframe class="embed" src="https://www.instagram.com/reel/C_0ZrJGS2ge/embed" allowfullscreen></iframe>
+          <div class="card-body">
+            <h3 class="title">Kehidupunk</h3>
+            <p class="meta">Humor & relatable cut</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">👋 About Cia</h2>
+      <div class="about">
+        <div style="display:flex;gap:16px;align-items:center">
+          <div class="avatar"><div>CIA</div></div>
+          <div>
+            <p>Half human, half WiFi signal. Strongest only near the fridge. 📡🍕 Warning: may randomly start laughing at my own jokes 😂</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">📮 Contact</h2>
+      <p>Email: <a href="mailto:careerannisaputriarmani@gmail.com">careerannisaputriarmani@gmail.com</a><br>Instagram: <a href="https://instagram.com/misoraa__" target="_blank">@misoraa__</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding:28px 0;color:var(--muted);border-top:1px solid #23232a">© <span id="y"></span> Cia — Fun, clean & smooth edits.</div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>

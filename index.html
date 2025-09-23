@@ -24,7 +24,7 @@
     nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(20,20,24,0.85), rgba(20,20,24,0.55) 70%, rgba(20,20,24,0));backdrop-filter: blur(8px);}
     .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
-    .logo{width:36px;height:36px;border-radius:10px;background:radial-gradient(100% 100% at 20% 25%, var(--yellow), var(--purple));box-shadow:var(--ring)}
+    .logo{width:36px;height:36px;border-radius:10px;object-fit:cover;box-shadow:var(--ring);border:1px solid #24242a}
     .nav-actions{display:flex;gap:.6rem}
     .btn{padding:.7rem 1rem;border-radius:14px;background:var(--soft);border:1px solid #24242a;color:var(--muted);font-weight:600;transition:all .25s}
     .btn-primary{background:linear-gradient(135deg,var(--purple),var(--yellow));color:#111;font-weight:800;border:none}
@@ -57,7 +57,7 @@
   <nav>
     <div class="container nav-wrap">
       <div class="brand">
-        <div class="logo"></div>
+        <img src="assets/cia-avatar.jpg" alt="Logo Cia" class="logo">
         <div>Cia ✂️ — Clipper</div>
       </div>
       <div class="nav-actions">

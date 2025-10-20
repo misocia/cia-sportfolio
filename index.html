@@ -30,8 +30,8 @@
     .headline{font-size:clamp(36px,6vw,64px);font-weight:900;margin:0;line-height:1.2;animation:fadeInUp 1s ease forwards;}
     .sub{color:var(--muted);font-size:clamp(14px,2.6vw,18px);margin-top:8px;animation:fadeInUp 1.2s ease forwards;}
     section{padding:36px 0}
-    .section-title{font-size:28px;margin:0 0 14px;font-weight:800}
-    .embed{aspect-ratio:16/9;width:100%;border:none;border-radius:18px;overflow:hidden;background:#101014;box-shadow:var(--ring)}
+    /* Menggunakan class 'embed' untuk semua, dengan rasio 16/9 */
+    .embed{aspect-ratio:16/9;width:100%;border:none;border-radius:18px;overflow:hidden;background:#101014;box-shadow:var(--ring)} 
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
     .card{background:var(--card);border:1px solid #23232a;border-radius:18px;overflow:hidden;box-shadow:var(--ring)}
     .card-body{padding:14px}
@@ -66,6 +66,28 @@
     <section id="work">
       <h2 class="section-title">🔥 Selected Works</h2>
       <div class="grid">
+        <article class="card">
+          <iframe class="embed" src="https://www.tiktok.com/@cia.cutter/video/7402633005087317253" allowfullscreen scrolling="no" title="Daily activities"></iframe>
+          <div class="card-body">
+            <h3 class="title">Daily activities</h3>
+            <p class="meta">TikTok Edit</p>
+          </div>
+        </article>
+        <article class="card">
+          <iframe class="embed" src="https://www.tiktok.com/@cia.cutter/video/7402635957388961029" allowfullscreen scrolling="no" title="Clipper fun"></iframe>
+          <div class="card-body">
+            <h3 class="title">Clipper fun</h3>
+            <p class="meta">TikTok Edit</p>
+          </div>
+        </article>
+        <article class="card">
+          <iframe class="embed" src="https://www.tiktok.com/@cia.cutter/video/7402632296565011717" allowfullscreen scrolling="no" title="Fun Edit"></iframe>
+          <div class="card-body">
+            <h3 class="title">Fun Edit</h3>
+            <p class="meta">TikTok Edit</p>
+          </div>
+        </article>
+        
         <article class="card">
           <iframe class="embed" src="https://www.instagram.com/reel/C4pcPB3Jhdg/embed" allowfullscreen></iframe>
           <div class="card-body">

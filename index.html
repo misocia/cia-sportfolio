@@ -33,16 +33,21 @@
     section{padding:36px 0}
     .section-title{font-size:28px;margin:0 0 14px;font-weight:800}
     
-    /* STYLE UNTUK SEMUA IFRAME EMBED (Instagram) */
-    .embed{
-        aspect-ratio: 16/9; /* Rasio standar horizontal */
+    /* STYLE UNTUK SEMUA IFRAME DAN WRAPPER VIDEO 9:16 (Instagram Reels & TikTok Clickable) */
+    .video-frame {
+        aspect-ratio: 9/16; /* Rasio vertikal 9:16 */
         width: 100%;
         height: auto; 
         border: none;
-        border-radius: 18px;
-        overflow: hidden;
         background: #101014;
-        box-shadow: var(--ring);
+        display: block; /* Agar iframe atau a mengisi ruang */
+    }
+    
+    /* Gaya untuk iframe */
+    .video-frame iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
     }
 
     /* STYLE UNTUK TIKTOK CLICKABLE CARD */
@@ -51,12 +56,9 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      aspect-ratio: 9/16; /* Rasio vertikal untuk simulasi TikTok */
       width: 100%;
-      height: 100%; /* Agar memenuhi card */
+      height: 100%;
       padding: 20px;
-      background: #101014;
-      border-radius: 18px;
       text-align: center;
       color: var(--muted);
       font-weight: 600;
@@ -81,6 +83,7 @@
     }
 
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    /* Style card utama, border-radius di sini */
     .card{background:var(--card);border:1px solid #23232a;border-radius:18px;overflow:hidden;box-shadow:var(--ring)} 
     
     .card-body{padding:14px}
@@ -116,7 +119,9 @@
       <h2 class="section-title">🔥 Selected Works</h2>
       <div class="grid">
         <article class="card">
-          <iframe class="embed" src="https://www.instagram.com/reel/DPsdZ6uEpbO/embed" allowfullscreen></iframe> 
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/DPsdZ6uEpbO/embed" allowfullscreen></iframe> 
+          </div>
           <div class="card-body">
             <h3 class="title">Daily activities</h3>
             <p class="meta">Cut & fun timing</p>
@@ -124,12 +129,14 @@
         </article>
         
         <article class="card">
-          <a href="https://www.tiktok.com/@misoraa__/video/7402635957388961029" target="_blank" class="tiktok-click-card">
-            <svg class="tiktok-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <div class="video-frame">
+            <a href="https://www.tiktok.com/@misoraa__/video/7402635957388961029" target="_blank" class="tiktok-click-card">
+              <svg class="tiktok-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 <path fill="#ffffff" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A164.8 164.8 0 0 0 352 368c0 26.2-13.3 50.4-35.3 65.3c-.9 .6-1.9 1.1-2.9 1.7V512l-51.2-19.4a164.5 164.5 0 0 1 -116.3-157.9V209.9h-69.5v51.6c0 53.9-38.3 96.6-88.4 102.6V398c2.9 0 5.8 .1 8.7 .1c8.3 0 16.6-.5 24.9-1.5c49.2-5.9 85.8-49.9 85.8-99.3c0-5.1-.4-10.2-1.3-15.1V0h78.3c0 148.2-101.4 209.9-101.4 209.9z"/></svg>
-            Klik untuk tonton di TikTok
-            <span>Clipper fun</span>
-          </a>
+              Klik untuk tonton di TikTok
+              <span>Clipper fun</span>
+            </a>
+          </div>
           <div class="card-body">
             <h3 class="title">Clipper fun</h3>
             <p class="meta">TikTok Edit</p>
@@ -137,12 +144,14 @@
         </article>
 
         <article class="card">
-          <a href="https://www.tiktok.com/@misoraa__/video/7402632296565011717" target="_blank" class="tiktok-click-card">
-            <svg class="tiktok-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <div class="video-frame">
+            <a href="https://www.tiktok.com/@misoraa__/video/7402632296565011717" target="_blank" class="tiktok-click-card">
+              <svg class="tiktok-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 <path fill="#ffffff" d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A164.8 164.8 0 0 0 352 368c0 26.2-13.3 50.4-35.3 65.3c-.9 .6-1.9 1.1-2.9 1.7V512l-51.2-19.4a164.5 164.5 0 0 1 -116.3-157.9V209.9h-69.5v51.6c0 53.9-38.3 96.6-88.4 102.6V398c2.9 0 5.8 .1 8.7 .1c8.3 0 16.6-.5 24.9-1.5c49.2-5.9 85.8-49.9 85.8-99.3c0-5.1-.4-10.2-1.3-15.1V0h78.3c0 148.2-101.4 209.9-101.4 209.9z"/></svg>
-            Klik untuk tonton di TikTok
-            <span>Fun Edit</span>
-          </a>
+              Klik untuk tonton di TikTok
+              <span>Fun Edit</span>
+            </a>
+          </div>
           <div class="card-body">
             <h3 class="title">Fun Edit</h3>
             <p class="meta">TikTok Edit</p>
@@ -150,35 +159,45 @@
         </article>
         
         <article class="card">
-          <iframe class="embed" src="https://www.instagram.com/reel/C4pcPB3Jhdg/embed" allowfullscreen></iframe>
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4pcPB3Jhdg/embed" allowfullscreen></iframe>
+          </div>
           <div class="card-body">
             <h3 class="title">Tiba Tiba Jadi Barista</h3>
             <p class="meta">Cut & fun timing</p>
           </div>
         </article>
         <article class="card">
-          <iframe class="embed" src="https://www.instagram.com/reel/C4pcxxSJ8fu/embed" allowfullscreen></iframe>
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4pcxxSJ8fu/embed" allowfullscreen></iframe>
+          </div>
           <div class="card-body">
             <h3 class="title">Masih Jadi Barista</h3>
             <p class="meta">Meme-style cuts</p>
           </div>
         </article>
         <article class="card">
-          <iframe class="embed" src="https://www.instagram.com/reel/C4pc48OpKMw/embed" allowfullscreen></iframe>
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4pc48OpKMw/embed" allowfullscreen></iframe>
+          </div>
           <div class="card-body">
             <h3 class="title">Free Time Banget</h3>
             <p class="meta">Relaxed vibe edit</p>
           </div>
         </article>
         <article class="card">
-          <iframe class="embed" src="https://www.instagram.com/reel/C4zrsPgJIqf/embed" allowfullscreen></iframe>
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4zrsPgJIqf/embed" allowfullscreen></iframe>
+          </div>
           <div class="card-body">
             <h3 class="title">Kehidupunk</h3>
             <p class="meta">Humor & relatable cut</p>
           </div>
         </article>
         <article class="card">
-          <iframe class="embed" src="https://www.instagram.com/reel/C_0ZrJGS2ge/embed" allowfullscreen></iframe>
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C_0ZrJGS2ge/embed" allowfullscreen></iframe>
+          </div>
           <div class="card-body">
             <h3 class="title">Grafiti Abiez</h3>
             <p class="meta">Street vibe edit</p>
@@ -206,7 +225,7 @@
       <p>
         Email: <a href="mailto:careerannisaputriarmani@gmail.com">careerannisaputriarmani@gmail.com</a><br>
         Instagram: <a href="https://instagram.com/misoraa__" target="_blank">@misoraa__</a><br>
-        TikTok: <a href="https://www.tiktok.com/@soyaclip" target="_blank">@soyaclip</a>
+        **TikTok:** <a href="https://www.tiktok.com/@soyaclip" target="_blank">@soyaclip</a>
       </p>
     </section>
 

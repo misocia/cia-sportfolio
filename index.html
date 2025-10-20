@@ -32,12 +32,16 @@
     section{padding:36px 0}
     .section-title{font-size:28px;margin:0 0 14px;font-weight:800}
     
-    /* STYLE UNTUK VIDEO INSTAGRAM (16:9) */
+    /* STYLE UNTUK INSTAGRAM (16:9) */
     .embed{aspect-ratio:16/9;width:100%;border:none;border-radius:18px;overflow:hidden;background:#101014;box-shadow:var(--ring)}
 
-    /* STYLE BARU UNTUK VIDEO TIKTOK (9:16) */
-    .embed-tiktok{aspect-ratio:9/16;width:100%;border:none;border-radius:18px;overflow:hidden;background:#101014;box-shadow:var(--ring)} 
-
+    /* STYLE UNTUK TIKTOK EMBED */
+    .tiktok-embed{
+        margin: 0 !important; 
+        background: var(--card);
+        border-radius: 18px;
+    } 
+    
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
     .card{background:var(--card);border:1px solid #23232a;border-radius:18px;overflow:hidden;box-shadow:var(--ring)}
     .card-body{padding:14px}
@@ -73,45 +77,35 @@
       <h2 class="section-title">🔥 Selected Works</h2>
       <div class="grid">
         <article class="card">
-          <iframe 
-            class="embed-tiktok" 
-            src="https://www.tiktok.com/embed/7402633005087317253" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen 
-            scrolling="no" 
-            title="Daily activities">
-          </iframe>
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@misoraa__/video/7402633005087317253" data-video-id="7402633005087317253" style="max-width: 605px;min-width: 325px;">
+            <section>
+              <a target="_blank" title="@misoraa__" href="https://www.tiktok.com/@misoraa__?refer_method=embed">@misoraa__</a>
+            </section>
+          </blockquote>
           <div class="card-body">
             <h3 class="title">Daily activities</h3>
             <p class="meta">TikTok Edit</p>
           </div>
         </article>
+
         <article class="card">
-          <iframe 
-            class="embed-tiktok" 
-            src="https://www.tiktok.com/embed/7402635957388961029" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen 
-            scrolling="no" 
-            title="Clipper fun">
-          </iframe>
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@misoraa__/video/7402635957388961029" data-video-id="7402635957388961029" style="max-width: 605px;min-width: 325px;">
+            <section>
+              <a target="_blank" title="@misoraa__" href="https://www.tiktok.com/@misoraa__?refer_method=embed">@misoraa__</a>
+            </section>
+          </blockquote>
           <div class="card-body">
             <h3 class="title">Clipper fun</h3>
             <p class="meta">TikTok Edit</p>
           </div>
         </article>
+
         <article class="card">
-          <iframe 
-            class="embed-tiktok" 
-            src="https://www.tiktok.com/embed/7402632296565011717" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen 
-            scrolling="no" 
-            title="Fun Edit">
-          </iframe>
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@misoraa__/video/7402632296565011717" data-video-id="7402632296565011717" style="max-width: 605px;min-width: 325px;">
+            <section>
+              <a target="_blank" title="@misoraa__" href="https://www.tiktok.com/@misoraa__?refer_method=embed">@misoraa__</a>
+            </section>
+          </blockquote>
           <div class="card-body">
             <h3 class="title">Fun Edit</h3>
             <p class="meta">TikTok Edit</p>
@@ -179,6 +173,9 @@
   <footer>
     <div class="container" style="padding:28px 0;color:var(--muted);border-top:1px solid #23232a">© <span id="y"></span> Cia — Fun, clean & smooth edits.</div>
   </footer>
+  
+  <script async src="https://www.tiktok.com/embed.js"></script>
+  
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>

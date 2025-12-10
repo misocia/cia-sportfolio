@@ -7,70 +7,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0e0e10;--card:#141418;--soft:#1d1d22;--text:#ffffff;--muted:#cfcfe1;--purple:#c7b8ff;--yellow:#fde68a;--pink:#fbcfe8;--white:#ffffff;--ring: 0 0 0 6px rgba(255,255,255,0.04), 0 12px 40px rgba(0,0,0,0.45);
+      --bg:#0e0e10;--card:#141418;--soft:#1d1d22;--text:#ffffff;--muted:#cfcfe1;
+      --purple:#c7b8ff;--yellow:#fde68a;--pink:#fbcfe8;--white:#ffffff;
+      --ring:0 0 0 6px rgba(255,255,255,0.04),0 12px 40px rgba(0,0,0,0.45);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;color:var(--text);font-family:'Poppins',sans-serif;
+    html,body{
+      margin:0;color:var(--text);font-family:'Poppins',sans-serif;
       background:
         radial-gradient(1200px 600px at -10% -20%, rgba(251,207,232,0.6), transparent 60%),
         radial-gradient(1000px 500px at 110% 10%, rgba(199,184,255,0.5), transparent 60%),
         radial-gradient(900px 500px at 50% 120%, rgba(253,230,138,0.45), transparent 60%),
         linear-gradient(160deg, #1a1a22 0%, #0e0e10 25%, #0e0e10 100%);
-      background-attachment: fixed;}
+      background-attachment: fixed;
+    }
+
     a{color:var(--yellow);text-decoration:none}
     .container{width:min(1150px,92%);margin-inline:auto}
-    nav{position:sticky;top:0;z-index:40;background:rgba(16,16,20,0.6);backdrop-filter: blur(8px);border-bottom:1px solid #24242a;}
+
+    nav{
+      position:sticky;top:0;z-index:40;
+      background:rgba(16,16,20,0.6);
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid #24242a;
+    }
+
     .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
     .logo{width:36px;height:36px;border-radius:10px;object-fit:cover;box-shadow:var(--ring);border:1px solid #24242a}
-    .nav-actions{display:flex;gap:.6rem}
-    .btn{padding:.7rem 1rem;border-radius:14px;background:var(--soft);border:1px solid #24242a;color:var(--muted);font-weight:600;transition:all .25s}
-    .btn-primary{background:linear-gradient(135deg,var(--purple),var(--yellow));color:#111;font-weight:800;border:none}
-    header.hero{position:relative;overflow:hidden;text-align:center;padding:70px 0 36px;}
-    @keyframes fadeInUp {0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
-    .headline{font-size:clamp(36px,6vw,64px);font-weight:900;margin:0;line-height:1.2;animation:fadeInUp 1s ease forwards;}
-    .sub{color:var(--muted);font-size:clamp(14px,2.6vw,18px);margin-top:8px;animation:fadeInUp 1.2s ease forwards;}
-    section{padding:36px 0}
-    .section-title{font-size:28px;margin:0 0 14px;font-weight:800}
-    
-    .video-frame {
-        aspect-ratio: 9/16;
-        width: 100%;
-        height: auto; 
-        border: none;
-        background: #101014;
-        display: block;
+
+    .btn{
+      padding:.7rem 1rem;border-radius:14px;background:var(--soft);
+      border:1px solid #24242a;color:var(--muted);
+      font-weight:600;transition:.25s;
     }
-    .video-frame iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
+    .btn-primary{
+      background:linear-gradient(135deg,var(--purple),var(--yellow));
+      color:#111;font-weight:800;border:none;
     }
 
-    .tiktok-click-card{
-      display: flex;flex-direction: column;justify-content: center;align-items: center;
-      width: 100%;height: 100%;padding: 20px;text-align: center;
-      color: var(--muted);font-weight: 600;transition: background 0.2s ease;text-decoration: none;
+    header.hero{text-align:center;padding:70px 0 36px;}
+    .headline{font-size:clamp(36px,6vw,64px);font-weight:900;margin:0;line-height:1.2;}
+    .sub{color:var(--muted);font-size:clamp(14px,2.6vw,18px);margin-top:8px;}
+
+    section{padding:36px 0}
+    .section-title{font-size:28px;margin:0 0 18px;font-weight:800}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:18px;
     }
-    .tiktok-click-card:hover{background: #1a1a20;color: var(--yellow);}
-    .tiktok-icon {width: 50px;height: 50px;margin-bottom: 10px;}
-    .tiktok-click-card span {display:block;margin-top:5px;font-size:.9em;font-weight:400;color:var(--pink);}
-    
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
-    .card{background:var(--card);border:1px solid #23232a;border-radius:18px;overflow:hidden;box-shadow:var(--ring)}
+
+    .card{
+      background:var(--card);border:1px solid #23232a;
+      border-radius:18px;overflow:hidden;
+      box-shadow:var(--ring);
+      transition:.25s;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 16px 45px rgba(0,0,0,0.55);
+    }
+
+    .video-frame{
+      aspect-ratio:9/16;
+      width:100%;background:#101014;border:none;
+    }
+    .video-frame iframe{
+      width:100%;height:100%;border:none;
+    }
+
     .card-body{padding:14px}
     .title{font-weight:800;margin:0 0 6px}
     .meta{color:var(--muted);font-size:.9rem;margin:0}
-    .about{display:grid;gap:22px;grid-template-columns:1.1fr .9fr}
-    .avatar{width:160px;height:200px;border-radius:24px;background:linear-gradient(135deg,var(--purple),var(--yellow));padding:4px;box-shadow:var(--ring);overflow:hidden}
-    .avatar>img{width:100%;height:100%;border-radius:20px;object-fit:cover}
+
+    .about{
+      display:flex;gap:22px;align-items:center;
+    }
+    .avatar{
+      width:160px;height:200px;border-radius:24px;
+      background:linear-gradient(135deg,var(--purple),var(--yellow));
+      padding:4px;box-shadow:var(--ring);overflow:hidden;
+    }
+    .avatar img{
+      width:100%;height:100%;border-radius:20px;object-fit:cover;
+    }
   </style>
 </head>
 <body>
+
   <nav>
     <div class="container nav-wrap">
       <div class="brand">
-        <img src="assets/cia-avatar.jpg" alt="Logo Cia" class="logo">
+        <img src="assets/cia-avatar.jpg" class="logo"/>
         <div>Cia ✂️ — Clipper</div>
       </div>
       <div class="nav-actions">
@@ -87,42 +117,103 @@
   </header>
 
   <main class="container">
+
     <section id="work">
       <h2 class="section-title">🔥 Selected Works</h2>
 
       <div class="grid">
 
-        <!-- Original cards… (tidak dihapus, tetap semua ada) -->
-
-        <!-- === Tambahan 3 Reels Baru === -->
-
+        <!-- VIDEO BARU 1 -->
         <article class="card">
           <div class="video-frame">
             <iframe src="https://www.instagram.com/reel/DRvrv2AARLM/embed" allowfullscreen></iframe>
           </div>
           <div class="card-body">
-            <h3 class="title">Edit Style 01</h3>
-            <p class="meta">Instagram Reel</p>
+            <h3 class="title">Morning Vibes</h3>
+            <p class="meta">Chill & soft timing</p>
           </div>
         </article>
 
+        <!-- VIDEO BARU 2 -->
         <article class="card">
           <div class="video-frame">
             <iframe src="https://www.instagram.com/reel/DR1Aw-ugQCf/embed" allowfullscreen></iframe>
           </div>
           <div class="card-body">
-            <h3 class="title">Edit Style 02</h3>
-            <p class="meta">Instagram Reel</p>
+            <h3 class="title">Day Out Moments</h3>
+            <p class="meta">Smooth cuts</p>
           </div>
         </article>
 
+        <!-- VIDEO BARU 3 -->
         <article class="card">
           <div class="video-frame">
             <iframe src="https://www.instagram.com/reel/DR3vIGXgVd2/embed" allowfullscreen></iframe>
           </div>
           <div class="card-body">
-            <h3 class="title">Edit Style 03</h3>
-            <p class="meta">Instagram Reel</p>
+            <h3 class="title">Random Fun Cut</h3>
+            <p class="meta">Fast & playful</p>
+          </div>
+        </article>
+
+        <!-- VIDEO LAMA (SEMUA TETAP ADA) -->
+        <article class="card">
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/DPsdZ6uEpbO/embed" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <h3 class="title">Daily activities</h3>
+            <p class="meta">Cut & fun timing</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4pcPB3Jhdg/embed" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <h3 class="title">Tiba Tiba Jadi Barista</h3>
+            <p class="meta">Cut & fun timing</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4pcxxSJ8fu/embed" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <h3 class="title">Masih Jadi Barista</h3>
+            <p class="meta">Meme-style cuts</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4pc48OpKMw/embed" allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <h3 class="title">Free Time Banget</h3>
+            <p class="meta">Relaxed vibe edit</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C4zrsPgJIqf/embed"></iframe>
+          </div>
+          <div class="card-body">
+            <h3 class="title">Kehidupunk</h3>
+            <p class="meta">Humor & relatable</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="video-frame">
+            <iframe src="https://www.instagram.com/reel/C_0ZrJGS2ge/embed"></iframe>
+          </div>
+          <div class="card-body">
+            <h3 class="title">Grafiti Abiez</h3>
+            <p class="meta">Street vibe edit</p>
           </div>
         </article>
 
@@ -131,15 +222,14 @@
 
     <section id="about">
       <h2 class="section-title">👋 About Cia</h2>
+
       <div class="about">
-        <div style="display:flex;gap:16px;align-items:center">
-          <div class="avatar">
-            <img src="assets/cia-logo.jpg" alt="Foto Cia Kacamata">
-          </div>
-          <div>
-            <p>Half human, half WiFi signal. Strongest only near the fridge. 📡🍕 Warning: may randomly start laughing at my own jokes 😂</p>
-          </div>
+        <div class="avatar">
+          <img src="assets/cia-logo.jpg" />
         </div>
+        <p>Half human, half WiFi signal. Strongest only near the fridge. 📡🍕  
+        Warning: may randomly start laughing at my own jokes 😂
+        </p>
       </div>
     </section>
 
@@ -160,6 +250,9 @@
     </div>
   </footer>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+<script>
+  document.getElementById('y').textContent=new Date().getFullYear()
+</script>
+
 </body>
 </html>
